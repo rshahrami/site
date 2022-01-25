@@ -18,7 +18,11 @@
     
 </head>
 <body>
-    <h2><a href="">LOGO</a></h2>
+    <!-- in url use articles and list 
+    the articles is name of url.py in articles folder (app_name) and
+    the list is name of path in url.py in articles folder (path('', views.articles_list, name="list"))-->
+    <h2><a href="">Home</a></h2>
+    <h2><a href="{% url 'articles:list' %}">LOGO</a></h2>
     <div class="container">
         {% block content %}
 

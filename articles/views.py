@@ -17,5 +17,5 @@ def articles_list(request):
     return render(request, 'articles/articleslist.html', args)
 
 
-def articles_detail(request, slug):
-    return HttpResponse(slug)
+def articles_detail(request, slugName):
+    return HttpResponse(slugName)
