@@ -23,8 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', views.about),
     path('', views.home),
+    # add articles.url to main url.py
     path('articles/', include('articles.url')),
 ]
 
-
+# add staticfiles_urlpatterns to urlpatterns
 urlpatterns += staticfiles_urlpatterns()

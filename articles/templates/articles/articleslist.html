@@ -1,21 +1,19 @@
-{% load static %} <!-- load static directory ( in settings file ) -->
+<!-- get from base.html (in templetes folder) -->
+{% extends 'base.html' %}
 
+    {% block title %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>articles list</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">  <!-- /static/styles.css -->
-</head>
-<body>
-    <h1>articles list</h1>
-    {% for x in articles_name_arg %}
-        <h2><a href="">{{ x.title }}</a></h2>
-        <p>{{ x.limitBody }}</p>
-        <p>{{ x.date }}</p>
-    {% endfor %}
-</body>
-</html>
+        articles list
+
+    {% endblock %}
+
+    {% block content %}
+      
+        <h1>articles list</h1>
+        {% for x in articles_name_arg %}
+            <h2><a href="">{{ x.title }}</a></h2>
+            <p>{{ x.limitBody }}</p>
+            <p>{{ x.date }}</p>
+        {% endfor %}
+
+    {% endblock %}

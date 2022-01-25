@@ -1,3 +1,17 @@
 body {
-    background-color: red;
+    background-color: #0f35;
+    background-image: url(images/star.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    font-family: arial;
+}
+
+a,a:hover,a:visited{
+
+    color: rgba(0, 153, 255, 0.87);
+    text-decoration: none;
+
 }
