@@ -3,7 +3,7 @@ from . import views
 
 # define a name for url.py
 # app_name use when a url tage use in html file
-app_name = "articles"
+app_name = "articles-url"
 
 urlpatterns = [
     path('', views.articles_list, name="list"),

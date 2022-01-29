@@ -15,7 +15,7 @@
             the articles is name of url.py in articles folder (app_name) and
             the detail is name of path in url.py in articles folder (path('<slug>', views.articles_detail, name="detail"))
             there use a slug variable. this variable define in url path in url.py for articlrs folder-->
-            <h2><a href="{% url 'articles:detail' slugName=x.slug %}">{{ x.title }}</a></h2>
+            <h2><a href="{% url 'articles-url:detail' slugName=x.slug %}">{{ x.title }}</a></h2>
             <p>{{ x.limitBody }}</p>
             <p>{{ x.date }}</p>
         {% endfor %}

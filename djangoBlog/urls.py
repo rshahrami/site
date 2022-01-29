@@ -18,6 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings # add all data in setting file that is djangoBlog directory
+from django.conf.urls.static import static
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,7 +29,10 @@ urlpatterns = [
     path('', views.home),
     # add articles.url to main url.py
     path('articles/', include('articles.url')),
+    path('accounts/', include('accounts.url'))
 ]
 
 # add staticfiles_urlpatterns to urlpatterns
 urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # connect MEDIA_URL  to MEDIA_ROOT
+# the file in the MEDIA_ROOT is use from MEDIA_URL
