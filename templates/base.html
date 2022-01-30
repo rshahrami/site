@@ -23,6 +23,17 @@
     the list is name of path in url.py in articles folder (path('', views.articles_list, name="list"))-->
     <h2><a href="">Home</a></h2>
     <h2><a href="{% url 'articles-url:list' %}">LOGO</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <form class="logout-link" action="{% url 'accounts-url:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">logout</button>
+                </form>
+                
+            </li>
+        </ul>
+    </nav>
     <div class="container">
         {% block content %}
 

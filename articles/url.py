@@ -10,6 +10,7 @@ urlpatterns = [
     # define a variable that name is slug
     # the slug variable for url articles/slug
     # define a name for path url and use in http hyperlink
+    path('create', views.create_article, name="create"),
     path('<slugName>', views.articles_detail, name="detail"),
 
 ]

@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<h1>signup</h1>
+<h1>login</h1>
 <!-- action is a url  --- this is /127.0.0.1/accounts/sginup -->
-<form class="" action="{% url 'accounts-url:signup' %}" method="post">   
+<form class="site-form" action="{% url 'accounts-url:login' %}" method="post">   
 
-    {{ form_signup }}
+    {{ form_login }}
     {% csrf_token %}
 
-    <input type="submit" value="signup">
+    <input type="submit" value="login">
 
 </form>
 
