@@ -18,23 +18,40 @@
     
 </head>
 <body>
-    <!-- in url use articles and list 
+    <header>
+            <!-- in url use articles and list 
     the articles is name of url.py in articles folder (app_name) and
     the list is name of path in url.py in articles folder (path('', views.articles_list, name="list"))-->
     <h2><a href="">Home</a></h2>
     <h2><a href="{% url 'articles-url:list' %}">LOGO</a></h2>
     <nav>
         <ul>
+            {% if user.is_authenticated %}
             <li>
                 <form class="logout-link" action="{% url 'accounts-url:logout' %}" method="post">
                     {% csrf_token %}
                     <button type="submit">logout</button>
                 </form>
-                
             </li>
+            <li>
+                <a class="highlight" href="{% url 'articles-url:create' %}">create new article</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'accounts-url:login' %}">login</a>
+                <!-- <button type="submit">login</button> -->
+            </li>
+            <li>
+                <a href="{% url 'accounts-url:signup' %}">signup</a>
+                <!-- <button type="submit">signup</button> -->
+            </li>
+
+            {% endif %}
         </ul>
     </nav>
-    <div class="container">
+    </header>
+
+    <div class="wrapper">
         {% block content %}
 
         {% endblock %}

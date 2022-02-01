@@ -20,16 +20,18 @@ from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings # add all data in setting file that is djangoBlog directory
 from django.conf.urls.static import static
+from articles.views import articles_list
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', views.about),
-    path('', views.home),
+   
     # add articles.url to main url.py
     path('articles/', include('articles.url')),
-    path('accounts/', include('accounts.url'))
+    path('accounts/', include('accounts.url')),
+    path('', articles_list),
 ]
 
 # add staticfiles_urlpatterns to urlpatterns

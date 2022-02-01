@@ -4,10 +4,15 @@
 
 <h1>login</h1>
 <!-- action is a url  --- this is /127.0.0.1/accounts/sginup -->
-<form class="site-form" action="{% url 'accounts-url:login' %}" method="post">   
+<form class="site-login" action="{% url 'accounts-url:login' %}" method="post">   
 
     {{ form_login }}
     {% csrf_token %}
+    {% if request.GET.next %}
+
+        <input type="hidden" name="next" value="{{request.GET.next}}">  <!-- get request.Get.netx with input and use in view -->
+
+    {% endif %} 
 
     <input type="submit" value="login">
 

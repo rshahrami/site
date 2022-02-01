@@ -10,14 +10,22 @@
     {% block content %}
       
         <h1>articles list</h1>
-        {% for x in articles_name_arg %}
-            <!-- in url use articles and detail 
-            the articles is name of url.py in articles folder (app_name) and
-            the detail is name of path in url.py in articles folder (path('<slug>', views.articles_detail, name="detail"))
-            there use a slug variable. this variable define in url path in url.py for articlrs folder-->
-            <h2><a href="{% url 'articles-url:detail' slugName=x.slug %}">{{ x.title }}</a></h2>
-            <p>{{ x.limitBody }}</p>
-            <p>{{ x.date }}</p>
-        {% endfor %}
+        <div class="articles">
+            {% for x in articles_name_arg %}
+            <div class="article">
+                <!-- in url use articles and detail 
+                the articles is name of url.py in articles folder (app_name) and
+                the detail is name of path in url.py in articles folder (path('<slug>', views.articles_detail, name="detail"))
+                there use a slug variable. this variable define in url path in url.py for articlrs folder-->
+                <h2><a href="{% url 'articles-url:detail' slugName=x.slug %}">{{ x.title }}</a></h2>
+                <p>{{ x.limitBody }}</p>
+                <p>{{ x.date }}</p>
+                <p class="author">added by {{ x.author.username }}</p>
+
+            </div>
+
+             {% endfor %}
+        </div>
+
 
     {% endblock %}
