@@ -1,0 +1,9 @@
+from dataclasses import field
+from pyexpat import model
+from django import forms
+from . import models
+class CreateArticle(forms.ModelForm):
+
+    class Meta:
+        model = models.Articles
+        fields = ['title', 'slug', 'body', 'image']
